@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Funiro</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="favicon.ico"><script defer src="js/app.js"></script><link href="css/app.css" rel="stylesheet"></head>
+<body class="fixScrollbar">
+<header class="header">
+    <div class="container">
+        <nav class="header__nav">
+            <h5 class="header__logo">Funiro.</h5>
+            <ul class="header__nav__links md">
+                <li class="header__nav__link header__nav__link-dropdown">Products</li>
+                <li class="header__nav__link header__nav__link-dropdown">Rooms</li>
+                <li class="header__nav__link">Inspirations</li>
+            </ul>
+        </nav>
+        <div class="header__search">
+            <button>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#333333" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.6666 14.6667L10.5801 10.5802M10.5801 10.5802C11.5604 9.59998 12.1666 8.24581 12.1666 6.75004C12.1666 3.7585 9.74152 1.33337 6.74998 1.33337C3.75844 1.33337 1.33331 3.7585 1.33331 6.75004C1.33331 9.74158 3.75844 12.1667 6.74998 12.1667C8.24575 12.1667 9.59992 11.5604 10.5801 10.5802Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <input class="sm" placeholder="Search for minimalist chair">
+        </div>
+        <div class="header__buttons">
+            <button>
+                <svg width="24" height="21" viewBox="0 0 24 21" fill="none" stroke="#262F56" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.9996 19.0542C-8 8.00003 5.99999 -3.99997 11.9996 3.58809C18 -3.99997 32 8.00003 11.9996 19.0542Z" stroke-width="1.8"/>
+                </svg>
+            </button>
+            <button>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#262F56" xmlns="http://www.w3.org/2000/svg" stroke-width="1.8">
+                    <path d="M1 2.5H2.65424C3.13263 2.5 3.37183 2.5 3.56628 2.58674C3.73771 2.66321 3.88415 2.78638 3.98886 2.94217C4.10763 3.11888 4.14862 3.35454 4.23058 3.82585L4.6087 6M4.6087 6L5.49173 11.0774C5.67091 12.1077 5.7605 12.6228 6.02583 12.9939C6.25945 13.3207 6.58606 13.5695 6.96311 13.708C7.39133 13.8654 7.91176 13.815 8.95264 13.7143L18.614 12.7793C19.6298 12.681 20.1378 12.6318 20.5221 12.4033C20.8653 12.1993 21.1395 11.8972 21.3095 11.536C21.5 11.1314 21.5 10.6211 21.5 9.6005V9.6005C21.5 8.51582 21.5 7.97348 21.2922 7.55394C21.1068 7.17971 20.809 6.8729 20.4404 6.67654C20.0272 6.4564 19.4851 6.44036 18.4009 6.40826L4.6087 6Z" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="8.5" cy="19" r="2"/>
+                    <circle cx="18" cy="19" r="2"/>
+                </svg>
+            </button>
+            <img src="data:image/jpeg;base64,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" alt="Avatar ">
+            <div class="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="main">
+        <div class="swiper main__slider">
+            <div class="main__slider__controls container">
+                <div class="main__block">
+                    <h1>High-Quality Furniture Just For You</h1>
+                    <p class="md">Our furniture is made from selected and best quality materials that are suitable for
+                        your dream home</p>
+                    <button class="button xl">Shop Now</button>
+                </div>
+                <div class="main__slider__controls-container">
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button swiper-button-prev">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggaWQ9IkxpbmUiIGQ9Ik05LjAwMDEyIDVMMTYuMDAwMSAxMkw5LjAwMDEyIDE5IiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogICAgICAgICAgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K" alt="Prev">
+                    </div>
+                    <div class="swiper-button swiper-button-next">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggaWQ9IkxpbmUiIGQ9Ik05LjAwMDEyIDVMMTYuMDAwMSAxMkw5LjAwMDEyIDE5IiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogICAgICAgICAgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K" alt="Next">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/design/1.382440.jpg" alt="How to create a living room to love" class="main__slider__img">
+                    <div class="main__slider__info">
+                        <h4 class="main__slider__info__title">Bohauss</h4>
+                        <p class="main__slider__info__description md">Luxury big sofa 2-seat</p>
+                        <div class="main__slider__info__price">
+                            <p class="lg">Rp 17.000.000</p>
+                            <svg width="16" height="12" viewBox="0 0 16 12" fill="#000" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.3652 6.56003L10.3852 11.56C10.2252 11.72 10.0251 11.8 9.82515 11.8C9.62515 11.8 9.42515 11.72 9.26515 11.56C8.94515 11.24 8.94515 10.74 9.26515 10.42L12.8852 6.78003H1.20515C0.765151 6.78003 0.405151 6.42003 0.405151 5.98003C0.405151 5.54003 0.765151 5.18003 1.20515 5.18003H12.8852L9.26515 1.54004C8.94515 1.22004 8.94515 0.720034 9.26515 0.400034C9.58515 0.0800342 10.0852 0.0800342 10.4052 0.400034L15.3852 5.40003C15.6852 5.74003 15.6852 6.26003 15.3652 6.56003Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/design/2.b36b3d.jpg" alt="How to create a living room to love" class="main__slider__img">
+                    <div class="main__slider__info">
+                        <h4 class="main__slider__info__title">Bohauss</h4>
+                        <p class="main__slider__info__description md">Luxury big sofa 2-seat</p>
+                        <div class="main__slider__info__price">
+                            <p class="lg">Rp 17.000.000</p>
+                            <svg width="16" height="12" viewBox="0 0 16 12" fill="#000" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.3652 6.56003L10.3852 11.56C10.2252 11.72 10.0251 11.8 9.82515 11.8C9.62515 11.8 9.42515 11.72 9.26515 11.56C8.94515 11.24 8.94515 10.74 9.26515 10.42L12.8852 6.78003H1.20515C0.765151 6.78003 0.405151 6.42003 0.405151 5.98003C0.405151 5.54003 0.765151 5.18003 1.20515 5.18003H12.8852L9.26515 1.54004C8.94515 1.22004 8.94515 0.720034 9.26515 0.400034C9.58515 0.0800342 10.0852 0.0800342 10.4052 0.400034L15.3852 5.40003C15.6852 5.74003 15.6852 6.26003 15.3652 6.56003Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/design/3.85ed2f.jpg" alt="How to create a living room to love" class="main__slider__img">
+                    <div class="main__slider__info">
+                        <h4 class="main__slider__info__title">Bohauss</h4>
+                        <p class="main__slider__info__description md">Luxury big sofa 2-seat</p>
+                        <div class="main__slider__info__price">
+                            <p class="lg">Rp 17.000.000</p>
+                            <svg width="16" height="12" viewBox="0 0 16 12" fill="#000" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.3652 6.56003L10.3852 11.56C10.2252 11.72 10.0251 11.8 9.82515 11.8C9.62515 11.8 9.42515 11.72 9.26515 11.56C8.94515 11.24 8.94515 10.74 9.26515 10.42L12.8852 6.78003H1.20515C0.765151 6.78003 0.405151 6.42003 0.405151 5.98003C0.405151 5.54003 0.765151 5.18003 1.20515 5.18003H12.8852L9.26515 1.54004C8.94515 1.22004 8.94515 0.720034 9.26515 0.400034C9.58515 0.0800342 10.0852 0.0800342 10.4052 0.400034L15.3852 5.40003C15.6852 5.74003 15.6852 6.26003 15.3652 6.56003Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="main__slider__bg"><img src="images/design/1.382440.jpg" alt="How to create a living room to love" class="main__slider__img"></div>
+                    <div class="main__slider__info">
+                        <h4 class="main__slider__info__title">Bohauss</h4>
+                        <p class="main__slider__info__description md">Luxury big sofa 2-seat</p>
+                        <div class="main__slider__info__price">
+                            <p class="lg">Rp 17.000.000</p>
+                            <svg width="16" height="12" viewBox="0 0 16 12" fill="#000" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.3652 6.56003L10.3852 11.56C10.2252 11.72 10.0251 11.8 9.82515 11.8C9.62515 11.8 9.42515 11.72 9.26515 11.56C8.94515 11.24 8.94515 10.74 9.26515 10.42L12.8852 6.78003H1.20515C0.765151 6.78003 0.405151 6.42003 0.405151 5.98003C0.405151 5.54003 0.765151 5.18003 1.20515 5.18003H12.8852L9.26515 1.54004C8.94515 1.22004 8.94515 0.720034 9.26515 0.400034C9.58515 0.0800342 10.0852 0.0800342 10.4052 0.400034L15.3852 5.40003C15.6852 5.74003 15.6852 6.26003 15.3652 6.56003Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main__slider__buttons">
+                <div class="swiper-pagination swiper-pagination-adaptive"></div>
+                <button class="button xl adaptive">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <section class="feature container">
+        <div class="feature__item">
+            <svg width="36" height="40" viewBox="0 0 36 40" fill="#3A3A3A" xmlns="http://www.w3.org/2000/svg">
+                <path d="M30.903 2.34375C30.0495 2.34375 29.2494 2.57414 28.5593 2.97437V1.17188C28.5593 0.524687 28.0346 0 27.3874 0H8.63742C7.99016 0 7.46547 0.524687 7.46547 1.17188V2.98867C6.76992 2.57953 5.96063 2.34375 5.09695 2.34375C2.51227 2.34375 0.409454 4.44656 0.409454 7.03125C0.409454 9.00273 0.993673 10.9077 2.09891 12.5402C3.98047 15.3193 6.3007 16.0405 8.22063 16.8084C9.32766 19.5653 11.5663 21.7502 14.3589 22.7846L13.4948 28.2812H13.3249C11.3864 28.2812 9.8093 29.8584 9.8093 31.7969V37.6562H8.63742C7.99023 37.6562 7.46555 38.1809 7.46555 38.8281C7.46555 39.4753 7.99023 40 8.63742 40H27.3874C28.0346 40 28.5593 39.4753 28.5593 38.8281C28.5593 38.1809 28.0346 37.6562 27.3874 37.6562H26.2155V31.7969C26.2155 29.8584 24.6384 28.2812 22.6999 28.2812H22.5301L21.666 22.7847C24.4627 21.7487 26.7038 19.5591 27.8092 16.7966C29.6229 16.0711 32.0003 15.3478 33.9012 12.5402C35.0064 10.9077 35.5906 9.00266 35.5906 7.03125C35.5905 4.44656 33.4877 2.34375 30.903 2.34375ZM7.4568 13.9787C4.59945 12.8357 2.7532 10.1087 2.7532 7.03125C2.7532 5.73891 3.80461 4.6875 5.09695 4.6875C6.3893 4.6875 7.4407 5.73891 7.4407 7.03125C7.4407 7.11367 7.44938 7.19398 7.46555 7.27156V12.8906C7.46555 13.2673 7.48578 13.6392 7.52453 14.0058L7.4568 13.9787ZM23.8718 37.6562H12.153V35.3125H23.8718V37.6562ZM22.6999 30.625C23.3461 30.625 23.8718 31.1507 23.8718 31.7969V32.9688H12.153V31.7969C12.153 31.1507 12.6788 30.625 13.3249 30.625C13.9607 30.625 21.2089 30.625 22.6999 30.625ZM15.8673 28.2812L16.6427 23.3487C17.0912 23.4071 17.5483 23.4375 18.0124 23.4375C18.4766 23.4375 18.9337 23.407 19.3821 23.3487L20.1576 28.2812H15.8673ZM26.2155 12.8906C26.2155 17.4138 22.5356 21.0938 18.0124 21.0938C13.4892 21.0938 9.8093 17.4138 9.8093 12.8906V7.03125H26.2155V12.8906ZM26.2155 4.6875H9.8093V2.34375H26.2155V4.6875ZM28.5431 13.9787L28.5015 13.9953C28.5395 13.6322 28.5592 13.2637 28.5592 12.8906V7.03125C28.5593 5.73891 29.6107 4.6875 30.903 4.6875C32.1954 4.6875 33.2468 5.73891 33.2468 7.03125C33.2468 10.1087 31.4005 12.8358 28.5431 13.9787Z"/>
+            </svg>
+            <div class="feature__item__description">
+                <p class="lg">High Quality</p>
+                <p class="md">crafted from top materials</p>
+            </div>
+        </div>
+        <div class="feature__item">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="#3A3A3A" xmlns="http://www.w3.org/2000/svg">
+                <path d="M37.8573 14.1741C37.3295 12.5397 37.5545 10.0864 36.1827 8.19207C34.8 6.28286 32.3952 5.7402 31.0373 4.74707C29.6938 3.76442 28.4438 1.62606 26.1837 0.888559C23.9873 0.17184 21.7414 1.14442 20 1.14442C18.2588 1.14442 16.013 0.171606 13.8163 0.888481C11.5566 1.62582 10.3056 3.76465 8.96289 4.74684C7.60648 5.73879 5.19992 6.28293 3.8175 8.19184C2.4468 10.0846 2.66953 12.5436 2.14266 14.174C1.64125 15.7258 0 17.5882 0 20.0001C0 22.4135 1.63938 24.2687 2.14266 25.8261C2.67047 27.4605 2.44547 29.9139 3.81734 31.8082C5.19992 33.7175 7.60461 34.26 8.96266 35.2532C10.306 36.2357 11.5562 38.3743 13.8163 39.1117C16.0112 39.8279 18.2606 38.8558 20 38.8558C21.737 38.8558 23.9916 39.8269 26.1837 39.1118C28.4434 38.3744 29.6937 36.2361 31.0371 35.2534C32.3935 34.2614 34.8001 33.7173 36.1825 31.8084C37.5533 29.9156 37.3304 27.4568 37.8573 25.8262C38.3587 24.2743 40 22.4119 40 20.0001C40 17.5869 38.361 15.7322 37.8573 14.1741ZM34.8838 24.8653C34.2686 26.7696 34.4298 28.9007 33.6516 29.9753C32.863 31.0641 30.7913 31.5614 29.1926 32.7308C27.6114 33.8871 26.5032 35.7202 25.2143 36.1407C23.9949 36.5387 22.0077 35.7307 20.0001 35.7307C17.9777 35.7307 16.011 36.5404 14.7858 36.1407C13.497 35.7202 12.3904 33.8884 10.8075 32.7307C9.21828 31.5685 7.13469 31.0609 6.34836 29.9751C5.57273 28.9042 5.72781 26.7582 5.11633 24.8654C4.51695 23.0107 3.125 21.4049 3.125 20.0001C3.125 18.594 4.5157 16.9936 5.11617 15.135C5.73141 13.2307 5.57023 11.0994 6.34836 10.025C7.13648 8.93684 9.20984 8.43786 10.8075 7.26942C12.3937 6.10934 13.4949 4.28067 14.7856 3.8595C16.004 3.462 17.9977 4.26957 19.9999 4.26957C22.0259 4.26957 23.9877 3.45926 25.2142 3.8595C26.5028 4.27997 27.6104 6.11247 29.1926 7.2695C30.7816 8.43176 32.8653 8.93934 33.6516 10.025C34.4274 11.0962 34.2715 13.24 34.8837 15.1348V15.1349C35.483 16.9895 36.875 18.5954 36.875 20.0001C36.875 21.4063 35.4843 23.0066 34.8838 24.8653ZM27.1987 14.9849C27.8089 15.5951 27.8089 16.5844 27.1987 17.1946L19.3779 25.0154C18.7677 25.6256 17.7783 25.6255 17.1681 25.0154L12.8014 20.6486C12.1912 20.0384 12.1911 19.0491 12.8013 18.4389C13.4116 17.8288 14.401 17.8287 15.011 18.4389L18.273 21.7008L24.9888 14.985C25.5991 14.3747 26.5884 14.3747 27.1987 14.9849Z"/>
+            </svg>
+            <div class="feature__item__description">
+                <p class="lg">Warrany Protection</p>
+                <p class="md">Over 2 years</p>
+            </div>
+        </div>
+        <div class="feature__item">
+            <svg width="40" height="38" viewBox="0 0 40 38" fill="#3A3A3A" xmlns="http://www.w3.org/2000/svg">
+                <path d="M36.8986 19.7346V1.5198C36.8986 0.86997 36.3718 0.34314 35.722 0.34314H4.19674C3.54691 0.34314 3.02008 0.86997 3.02008 1.5198V21.1867C2.45246 21.2694 1.89755 21.4898 1.40664 21.8542C-0.140899 22.9516 -0.506918 25.4073 0.789368 26.9218L6.08928 33.347C9.36996 37.1866 12.855 37.657 18.0359 37.657C22.4819 37.657 24.4696 37.6766 28.3443 36.7937L32.1173 35.8913C32.7291 36.7456 33.7003 37.299 34.7922 37.299H36.6508C38.4975 37.299 40 35.7163 40 33.7708V23.2523C40.0001 21.3947 38.63 19.8688 36.8986 19.7346ZM31.6098 22.1551L30.042 21.3588C27.4642 20.0577 24.4839 20.0095 21.8655 21.2269C21.1511 21.5079 19.5929 22.4506 18.7847 22.4191H13.3445C11.54 22.4191 10.0718 23.8872 10.0718 25.6918V26.5499C10.0617 26.5392 10.0511 26.5291 10.0411 26.5182L6.15619 22.3013C5.9211 22.0462 5.65697 21.8326 5.37348 21.6613V9.98736H15.0027V14.3007C15.0027 14.9505 15.5295 15.4773 16.1794 15.4773H23.6042C24.254 15.4773 24.7808 14.9505 24.7808 14.3007V9.98736H34.5454V19.7346C33.1706 19.8408 32.0242 20.8243 31.6098 22.1551ZM17.356 9.98736H22.4274V13.124H17.356V9.98736ZM34.5453 7.63404H24.7808V2.69646H34.5454V7.63404H34.5453ZM22.4275 2.69646V7.63412H17.356V2.69646H22.4275ZM15.0026 2.69646V7.63412H5.3734V2.69646H15.0026ZM27.7982 34.5046C24.2188 35.3244 22.0631 35.2912 18.0781 35.2912C13.2146 35.2912 10.8646 35.2126 7.90479 31.8494L2.60488 25.4243C1.683 24.2238 3.35276 22.8067 4.4254 23.8957L8.31034 28.1127C9.3371 29.1961 10.6291 29.7923 12.2216 29.8274H22.9926C23.6425 29.8274 24.1693 29.3006 24.1693 28.6507C24.1693 28.0009 23.6425 27.4741 22.9926 27.4741H12.425V25.6916C12.425 25.1847 12.8374 24.7722 13.3444 24.7722H18.7847C20.0103 24.86 21.7793 23.8366 22.8575 23.3607C24.8186 22.4489 27.0508 22.485 28.9789 23.4581L31.4432 24.7098V33.6326L27.7982 34.5046ZM37.6467 33.7707C37.6467 34.4186 37.2 34.9456 36.6509 34.9456H34.7922C34.2431 34.9456 33.7965 34.4186 33.7965 33.7707V23.2523C33.7965 22.6044 34.2432 22.0773 34.7922 22.0773H36.6509C37.2 22.0773 37.6467 22.6044 37.6467 23.2523V33.7707Z"/>
+            </svg>
+            <div class="feature__item__description">
+                <p class="lg">Free Shipping</p>
+                <p class="md">Order over 150 $</p>
+            </div>
+        </div>
+        <div class="feature__item">
+            <svg width="36" height="40" viewBox="0 0 36 40" fill="#3A3A3A" xmlns="http://www.w3.org/2000/svg">
+                <path d="M34.4624 15.9752C34.1995 7.12165 26.9161 0 18 0C9.08381 0 1.80043 7.12165 1.53745 15.9752L0.352905 17.1598V25.1932L1.52938 26.3696V31.8431C1.52938 35.0435 4.13298 37.6471 7.3333 37.6471H8.79055C9.2762 39.0164 10.5839 40 12.1176 40H14.4706C16.0053 40 17.3137 39.015 17.7986 37.6442C17.8658 37.6454 17.9331 37.6471 18 37.6471C23.6814 37.6471 28.4351 33.5987 29.5281 28.2353H32.6049L35.647 25.1932V17.1598L34.4624 15.9752ZM18 2.35294C24.9828 2.35294 30.7969 7.44933 31.9204 14.1176H29.5281C28.4351 8.7542 23.6814 4.70588 18 4.70588C12.3186 4.70588 7.56483 8.7542 6.47181 14.1176H4.07949C5.20302 7.44933 11.0171 2.35294 18 2.35294ZM27.1139 14.1176C23.3109 14.1063 20.6246 14.3379 18.4098 11.1004L17.3344 9.52839L16.4102 11.1938C15.0635 13.6204 13.2499 14.1176 10.9411 14.1176H8.886C9.93346 10.0629 13.6225 7.05882 18 7.05882C22.3775 7.05882 26.0665 10.0629 27.1139 14.1176ZM6.23526 25.8824H4.36961L2.70585 24.2186V18.1344L4.36961 16.4706H6.23526V25.8824ZM3.88232 31.8431V28.2353H6.46953C6.91244 30.4294 7.97212 32.4435 9.542 34.0611C9.21291 34.4127 8.95479 34.8311 8.79055 35.2941H7.3333C5.4304 35.2941 3.88232 33.746 3.88232 31.8431ZM14.4706 37.6471H12.1176C11.4688 37.6471 10.9411 37.1194 10.9411 36.4706C10.9411 35.8219 11.4688 35.2941 12.1176 35.2941H14.4706C15.1193 35.2941 15.647 35.8219 15.647 36.4706C15.647 37.1194 15.1193 37.6471 14.4706 37.6471ZM27.4117 25.8824C27.4117 31.072 23.1896 35.2941 18 35.2941C17.9325 35.2941 17.8645 35.2928 17.7966 35.2912C17.3102 33.9234 16.0032 32.9412 14.4706 32.9412C12.0549 32.9465 12.0934 32.9291 11.7923 32.9568C9.74977 31.1665 8.5882 28.6166 8.5882 25.8824V16.4706H10.9411C13.0233 16.4706 15.5589 16.1273 17.5218 13.7384C20.1116 16.4524 23.2764 16.4706 26.1175 16.4706H27.4117V25.8824ZM33.2941 24.2186L31.6303 25.8824H29.7647V16.4706H31.6303L33.2941 18.1344V24.2186Z"/>
+            </svg>
+            <div class="feature__item__description">
+                <p class="lg">24 / 7 Support</p>
+                <p class="md">Dedicated support</p>
+            </div>
+        </div>
+    </section>
+    <section class="products container">
+        <h2>Our Products</h2>
+        <div class="products__wrapper">
+            <div class="product__card">
+                <div class="product__card__label product__card__label-discount">-30%</div>
+                <img src="images/design/image 1.194f1c.jpg" alt="Syltherine">
+                <div class="product__card__description">
+                    <h5>Syltherine</h5>
+                    <p class="md">Stylish cafe chair</p>
+                    <div class="product__card__price product__card__price-discount">
+                        <span class="xl">Rp 2.500.000</span>
+                        <span>Rp 3.500.000</span>
+                    </div>
+                </div>
+                <div class="product__card__overlay">
+                    <button class="product__card__btn-add md">Add to cart</button>
+                    <div class="product__card__actions">
+                        <div>
+                            <svg width="18" height="20" viewBox="0 0 18 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 14C14.212 14 13.5 14.31 12.966 14.807L5.91 10.7C5.96 10.47 6 10.24 6 10C6 9.76 5.96 9.53 5.91 9.3L12.96 5.19C13.5 5.69 14.21 6 15 6C16.66 6 18 4.66 18 3C18 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 3.24 12.04 3.47 12.09 3.7L5.04 7.81C4.5 7.31 3.79 7 3 7C1.34 7 0 8.34 0 10C0 11.66 1.34 13 3 13C3.79 13 4.5 12.69 5.04 12.19L12.088 16.308C12.0317 16.5344 12.0022 16.7667 12 17C12 17.5933 12.1759 18.1734 12.5056 18.6667C12.8352 19.1601 13.3038 19.5446 13.8519 19.7716C14.4001 19.9987 15.0033 20.0581 15.5853 19.9424C16.1672 19.8266 16.7018 19.5409 17.1213 19.1213C17.5409 18.7018 17.8266 18.1672 17.9424 17.5853C18.0581 17.0033 17.9987 16.4001 17.7716 15.8519C17.5446 15.3038 17.1601 14.8352 16.6667 14.5056C16.1734 14.1759 15.5933 14 15 14Z"/>
+                            </svg>
+                            <span>Share</span>
+                        </div>
+                        <div>
+                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" stroke="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.9996 19.0541C-8 8 5.99999 -4 11.9996 3.58806C18 -4 32 8 11.9996 19.0541Z" stroke-width="1.8"/>
+                            </svg>
+                            <span>Like</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product__card">
+                <img src="images/design/image 2.8ea2b1.jpg" alt="Leviosa">
+                <div class="product__card__description">
+                    <h5>Leviosa</h5>
+                    <p class="md">Stylish cafe chair</p>
+                    <div class="product__card__price">
+                        <span class="xl">Rp 2.500.000</span>
+                    </div>
+                </div>
+                <div class="product__card__overlay">
+                    <button class="product__card__btn-add md">Add to cart</button>
+                    <div class="product__card__actions">
+                        <div>
+                            <svg width="18" height="20" viewBox="0 0 18 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 14C14.212 14 13.5 14.31 12.966 14.807L5.91 10.7C5.96 10.47 6 10.24 6 10C6 9.76 5.96 9.53 5.91 9.3L12.96 5.19C13.5 5.69 14.21 6 15 6C16.66 6 18 4.66 18 3C18 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 3.24 12.04 3.47 12.09 3.7L5.04 7.81C4.5 7.31 3.79 7 3 7C1.34 7 0 8.34 0 10C0 11.66 1.34 13 3 13C3.79 13 4.5 12.69 5.04 12.19L12.088 16.308C12.0317 16.5344 12.0022 16.7667 12 17C12 17.5933 12.1759 18.1734 12.5056 18.6667C12.8352 19.1601 13.3038 19.5446 13.8519 19.7716C14.4001 19.9987 15.0033 20.0581 15.5853 19.9424C16.1672 19.8266 16.7018 19.5409 17.1213 19.1213C17.5409 18.7018 17.8266 18.1672 17.9424 17.5853C18.0581 17.0033 17.9987 16.4001 17.7716 15.8519C17.5446 15.3038 17.1601 14.8352 16.6667 14.5056C16.1734 14.1759 15.5933 14 15 14Z"/>
+                            </svg>
+                            <span>Share</span>
+                        </div>
+                        <div>
+                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" stroke="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.9996 19.0541C-8 8 5.99999 -4 11.9996 3.58806C18 -4 32 8 11.9996 19.0541Z" stroke-width="1.8"/>
+                            </svg>
+                            <span>Like</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product__card">
+                <div class="product__card__label product__card__label-discount">-50%</div>
+                <img src="images/design/image 3.dd4927.jpg" alt="Lolito">
+                <div class="product__card__description">
+                    <h5>Lolito</h5>
+                    <p class="md">Luxury big sofa</p>
+                    <div class="product__card__price product__card__price-discount">
+                        <span class="xl">Rp 7.000.000</span>
+                        <span>Rp 14.000.000</span>
+                    </div>
+                </div>
+                <div class="product__card__overlay">
+                    <button class="product__card__btn-add md">Add to cart</button>
+                    <div class="product__card__actions">
+                        <div>
+                            <svg width="18" height="20" viewBox="0 0 18 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 14C14.212 14 13.5 14.31 12.966 14.807L5.91 10.7C5.96 10.47 6 10.24 6 10C6 9.76 5.96 9.53 5.91 9.3L12.96 5.19C13.5 5.69 14.21 6 15 6C16.66 6 18 4.66 18 3C18 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 3.24 12.04 3.47 12.09 3.7L5.04 7.81C4.5 7.31 3.79 7 3 7C1.34 7 0 8.34 0 10C0 11.66 1.34 13 3 13C3.79 13 4.5 12.69 5.04 12.19L12.088 16.308C12.0317 16.5344 12.0022 16.7667 12 17C12 17.5933 12.1759 18.1734 12.5056 18.6667C12.8352 19.1601 13.3038 19.5446 13.8519 19.7716C14.4001 19.9987 15.0033 20.0581 15.5853 19.9424C16.1672 19.8266 16.7018 19.5409 17.1213 19.1213C17.5409 18.7018 17.8266 18.1672 17.9424 17.5853C18.0581 17.0033 17.9987 16.4001 17.7716 15.8519C17.5446 15.3038 17.1601 14.8352 16.6667 14.5056C16.1734 14.1759 15.5933 14 15 14Z"/>
+                            </svg>
+                            <span>Share</span>
+                        </div>
+                        <div>
+                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" stroke="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.9996 19.0541C-8 8 5.99999 -4 11.9996 3.58806C18 -4 32 8 11.9996 19.0541Z" stroke-width="1.8"/>
+                            </svg>
+                            <span>Like</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product__card">
+                <div class="product__card__label product__card__label-new">New</div>
+                <img src="images/design/image 4.c311ee.jpg" alt="Respira">
+                <div class="product__card__description">
+                    <h5>Respira</h5>
+                    <p class="md">Minimalist fan</p>
+                    <div class="product__card__price">
+                        <span class="xl">Rp 500.000</span>
+                    </div>
+                </div>
+                <div class="product__card__overlay">
+                    <button class="product__card__btn-add md">Add to cart</button>
+                    <div class="product__card__actions">
+                        <div>
+                            <svg width="18" height="20" viewBox="0 0 18 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 14C14.212 14 13.5 14.31 12.966 14.807L5.91 10.7C5.96 10.47 6 10.24 6 10C6 9.76 5.96 9.53 5.91 9.3L12.96 5.19C13.5 5.69 14.21 6 15 6C16.66 6 18 4.66 18 3C18 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 3.24 12.04 3.47 12.09 3.7L5.04 7.81C4.5 7.31 3.79 7 3 7C1.34 7 0 8.34 0 10C0 11.66 1.34 13 3 13C3.79 13 4.5 12.69 5.04 12.19L12.088 16.308C12.0317 16.5344 12.0022 16.7667 12 17C12 17.5933 12.1759 18.1734 12.5056 18.6667C12.8352 19.1601 13.3038 19.5446 13.8519 19.7716C14.4001 19.9987 15.0033 20.0581 15.5853 19.9424C16.1672 19.8266 16.7018 19.5409 17.1213 19.1213C17.5409 18.7018 17.8266 18.1672 17.9424 17.5853C18.0581 17.0033 17.9987 16.4001 17.7716 15.8519C17.5446 15.3038 17.1601 14.8352 16.6667 14.5056C16.1734 14.1759 15.5933 14 15 14Z"/>
+                            </svg>
+                            <span>Share</span>
+                        </div>
+                        <div>
+                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" stroke="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.9996 19.0541C-8 8 5.99999 -4 11.9996 3.58806C18 -4 32 8 11.9996 19.0541Z" stroke-width="1.8"/>
+                            </svg>
+                            <span>Like</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product__card">
+                <img src="images/design/image 9.8d13de.jpg" alt="Grifo">
+                <div class="product__card__description">
+                    <h5>Grifo</h5>
+                    <p class="md">Night lamp</p>
+                    <div class="product__card__price">
+                        <span class="xl">Rp 1.500.000</span>
+                    </div>
+                </div>
+                <div class="product__card__overlay">
+                    <button class="product__card__btn-add md">Add to cart</button>
+                    <div class="product__card__actions">
+                        <div>
+                            <svg width="18" height="20" viewBox="0 0 18 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 14C14.212 14 13.5 14.31 12.966 14.807L5.91 10.7C5.96 10.47 6 10.24 6 10C6 9.76 5.96 9.53 5.91 9.3L12.96 5.19C13.5 5.69 14.21 6 15 6C16.66 6 18 4.66 18 3C18 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 3.24 12.04 3.47 12.09 3.7L5.04 7.81C4.5 7.31 3.79 7 3 7C1.34 7 0 8.34 0 10C0 11.66 1.34 13 3 13C3.79 13 4.5 12.69 5.04 12.19L12.088 16.308C12.0317 16.5344 12.0022 16.7667 12 17C12 17.5933 12.1759 18.1734 12.5056 18.6667C12.8352 19.1601 13.3038 19.5446 13.8519 19.7716C14.4001 19.9987 15.0033 20.0581 15.5853 19.9424C16.1672 19.8266 16.7018 19.5409 17.1213 19.1213C17.5409 18.7018 17.8266 18.1672 17.9424 17.5853C18.0581 17.0033 17.9987 16.4001 17.7716 15.8519C17.5446 15.3038 17.1601 14.8352 16.6667 14.5056C16.1734 14.1759 15.5933 14 15 14Z"/>
+                            </svg>
+                            <span>Share</span>
+                        </div>
+                        <div>
+                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" stroke="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.9996 19.0541C-8 8 5.99999 -4 11.9996 3.58806C18 -4 32 8 11.9996 19.0541Z" stroke-width="1.8"/>
+                            </svg>
+                            <span>Like</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product__card">
+                <div class="product__card__label product__card__label-new">New</div>
+                <img src="images/design/image 6.6b143a.jpg" alt="Muggo">
+                <div class="product__card__description">
+                    <h5>Muggo</h5>
+                    <p class="md">Small mug</p>
+                    <div class="product__card__price">
+                        <span class="xl">Rp 150.000</span>
+                    </div>
+                </div>
+                <div class="product__card__overlay">
+                    <button class="product__card__btn-add md">Add to cart</button>
+                    <div class="product__card__actions">
+                        <div>
+                            <svg width="18" height="20" viewBox="0 0 18 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 14C14.212 14 13.5 14.31 12.966 14.807L5.91 10.7C5.96 10.47 6 10.24 6 10C6 9.76 5.96 9.53 5.91 9.3L12.96 5.19C13.5 5.69 14.21 6 15 6C16.66 6 18 4.66 18 3C18 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 3.24 12.04 3.47 12.09 3.7L5.04 7.81C4.5 7.31 3.79 7 3 7C1.34 7 0 8.34 0 10C0 11.66 1.34 13 3 13C3.79 13 4.5 12.69 5.04 12.19L12.088 16.308C12.0317 16.5344 12.0022 16.7667 12 17C12 17.5933 12.1759 18.1734 12.5056 18.6667C12.8352 19.1601 13.3038 19.5446 13.8519 19.7716C14.4001 19.9987 15.0033 20.0581 15.5853 19.9424C16.1672 19.8266 16.7018 19.5409 17.1213 19.1213C17.5409 18.7018 17.8266 18.1672 17.9424 17.5853C18.0581 17.0033 17.9987 16.4001 17.7716 15.8519C17.5446 15.3038 17.1601 14.8352 16.6667 14.5056C16.1734 14.1759 15.5933 14 15 14Z"/>
+                            </svg>
+                            <span>Share</span>
+                        </div>
+                        <div>
+                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" stroke="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.9996 19.0541C-8 8 5.99999 -4 11.9996 3.58806C18 -4 32 8 11.9996 19.0541Z" stroke-width="1.8"/>
+                            </svg>
+                            <span>Like</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product__card">
+                <div class="product__card__label product__card__label-discount">-50%</div>
+                <img src="images/design/image 7.b62d94.jpg" alt="Pingky">
+                <div class="product__card__description">
+                    <h5>Pingky</h5>
+                    <p class="md">Cute bed set</p>
+                    <div class="product__card__price product__card__price-discount">
+                        <span class="xl">Rp 7.000.000</span>
+                        <span>Rp 14.000.000</span>
+                    </div>
+                </div>
+                <div class="product__card__overlay">
+                    <button class="product__card__btn-add md">Add to cart</button>
+                    <div class="product__card__actions">
+                        <div>
+                            <svg width="18" height="20" viewBox="0 0 18 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 14C14.212 14 13.5 14.31 12.966 14.807L5.91 10.7C5.96 10.47 6 10.24 6 10C6 9.76 5.96 9.53 5.91 9.3L12.96 5.19C13.5 5.69 14.21 6 15 6C16.66 6 18 4.66 18 3C18 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 3.24 12.04 3.47 12.09 3.7L5.04 7.81C4.5 7.31 3.79 7 3 7C1.34 7 0 8.34 0 10C0 11.66 1.34 13 3 13C3.79 13 4.5 12.69 5.04 12.19L12.088 16.308C12.0317 16.5344 12.0022 16.7667 12 17C12 17.5933 12.1759 18.1734 12.5056 18.6667C12.8352 19.1601 13.3038 19.5446 13.8519 19.7716C14.4001 19.9987 15.0033 20.0581 15.5853 19.9424C16.1672 19.8266 16.7018 19.5409 17.1213 19.1213C17.5409 18.7018 17.8266 18.1672 17.9424 17.5853C18.0581 17.0033 17.9987 16.4001 17.7716 15.8519C17.5446 15.3038 17.1601 14.8352 16.6667 14.5056C16.1734 14.1759 15.5933 14 15 14Z"/>
+                            </svg>
+                            <span>Share</span>
+                        </div>
+                        <div>
+                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" stroke="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.9996 19.0541C-8 8 5.99999 -4 11.9996 3.58806C18 -4 32 8 11.9996 19.0541Z" stroke-width="1.8"/>
+                            </svg>
+                            <span>Like</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product__card">
+                <div class="product__card__label product__card__label-new">New</div>
+                <img src="images/design/image 8.c9169b.jpg" alt="Potty">
+                <div class="product__card__description">
+                    <h5>Potty</h5>
+                    <p class="md">Minimalist flower pot</p>
+                    <div class="product__card__price">
+                        <span class="xl">Rp 500.000</span>
+                    </div>
+                </div>
+                <div class="product__card__overlay">
+                    <button class="product__card__btn-add md">Add to cart</button>
+                    <div class="product__card__actions">
+                        <div>
+                            <svg width="18" height="20" viewBox="0 0 18 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 14C14.212 14 13.5 14.31 12.966 14.807L5.91 10.7C5.96 10.47 6 10.24 6 10C6 9.76 5.96 9.53 5.91 9.3L12.96 5.19C13.5 5.69 14.21 6 15 6C16.66 6 18 4.66 18 3C18 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 3.24 12.04 3.47 12.09 3.7L5.04 7.81C4.5 7.31 3.79 7 3 7C1.34 7 0 8.34 0 10C0 11.66 1.34 13 3 13C3.79 13 4.5 12.69 5.04 12.19L12.088 16.308C12.0317 16.5344 12.0022 16.7667 12 17C12 17.5933 12.1759 18.1734 12.5056 18.6667C12.8352 19.1601 13.3038 19.5446 13.8519 19.7716C14.4001 19.9987 15.0033 20.0581 15.5853 19.9424C16.1672 19.8266 16.7018 19.5409 17.1213 19.1213C17.5409 18.7018 17.8266 18.1672 17.9424 17.5853C18.0581 17.0033 17.9987 16.4001 17.7716 15.8519C17.5446 15.3038 17.1601 14.8352 16.6667 14.5056C16.1734 14.1759 15.5933 14 15 14Z"/>
+                            </svg>
+                            <span>Share</span>
+                        </div>
+                        <div>
+                            <svg width="24" height="21" viewBox="0 0 24 21" fill="none" stroke="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.9996 19.0541C-8 8 5.99999 -4 11.9996 3.58806C18 -4 32 8 11.9996 19.0541Z" stroke-width="1.8"/>
+                            </svg>
+                            <span>Like</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product__button">
+            <button>Show more</button>
+        </div>
+    </section>
+    <section class="rooms">
+        <div class="container">
+            <div class="rooms__titles">
+                <h2>50+ Beautiful rooms inspiration</h2>
+                <p class="md">Our designer already made a lot of beautiful prototype of rooms that inspire you</p>
+                <button>Explore more</button>
+            </div>
+            <div class="swiper rooms__slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/design/1.c1c329.png" alt="Bed Room" class="rooms__slider__img">
+                        <div class="rooms__slider__info">
+                            <div class="rooms__slider__info__label md">
+                                <div>01</div>
+                                <div></div>
+                                <div>Bed Room</div>
+                            </div>
+                            <h4>Inner Peace</h4>
+                            <div class="rooms__slider__info__arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" stroke="white" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 12H3M21 12L15 6M21 12L15 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/design/2.e558a9.png" alt="Bed Room" class="rooms__slider__img">
+                        <div class="rooms__slider__info">
+                            <div class="rooms__slider__info__label md">
+                                <div>02</div>
+                                <div></div>
+                                <div>Bed Room</div>
+                            </div>
+                            <h4>Inner Peace</h4>
+                            <div class="rooms__slider__info__arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" stroke="white" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 12H3M21 12L15 6M21 12L15 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/design/3.c518e0.png" alt="Bed Room" class="rooms__slider__img">
+                        <div class="rooms__slider__info">
+                            <div class="rooms__slider__info__label md">
+                                <div>03</div>
+                                <div></div>
+                                <div>Bed Room</div>
+                            </div>
+                            <h4>Inner Peace</h4>
+                            <div class="rooms__slider__info__arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" stroke="white" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 12H3M21 12L15 6M21 12L15 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button swiper-button-next">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRTg5RjcxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggaWQ9IkxpbmUiIGQ9Ik05LjAwMDEyIDVMMTYuMDAwMSAxMkw5LjAwMDEyIDE5IiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogICAgICAgICAgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K" alt="Next">
+                </div>
+                <div class="swiper-button swiper-button-prev">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRTg5RjcxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggaWQ9IkxpbmUiIGQ9Ik05LjAwMDEyIDVMMTYuMDAwMSAxMkw5LjAwMDEyIDE5IiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogICAgICAgICAgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K" alt="Prev">
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <section class="tips container">
+        <h2>Tips & Tricks</h2>
+        <div class="swiper tips__slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/design/1.ae46b2.jpg" alt="How to create a living room to love" class="tips__slider__img">
+                    <h5 class="tips__slider__description">How to create a living room to love</h5>
+                    <p class="tips__slider__date sm">20 jan 2020</p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/design/2.dd9438.jpg" alt="How to create a living room to love" class="tips__slider__img">
+                    <h5 class="tips__slider__description">Solution for clean look working space</h5>
+                    <p class="tips__slider__date sm">10 jan 2020</p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/design/3.c07b1b.jpg" alt="How to create a living room to love" class="tips__slider__img">
+                    <h5 class="tips__slider__description">Make your cooking activity more fun with good setup</h5>
+                    <p class="tips__slider__date sm">20 jan 2020</p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/design/1.ae46b2.jpg" alt="How to create a living room to love" class="tips__slider__img">
+                    <h5 class="tips__slider__description">How to create a living room to love</h5>
+                    <p class="tips__slider__date sm">20 jan 2020</p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/design/2.dd9438.jpg" alt="How to create a living room to love" class="tips__slider__img">
+                    <h5 class="tips__slider__description">Solution for clean look working space</h5>
+                    <p class="tips__slider__date sm">10 jan 2020</p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/design/3.c07b1b.jpg" alt="How to create a living room to love" class="tips__slider__img">
+                    <h5 class="tips__slider__description">Make your cooking activity more fun with good setup</h5>
+                    <p class="tips__slider__date sm">20 jan 2020</p>
+                </div>
+            </div>
+            <div class="swiper-button swiper-button-next">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRTg5RjcxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggaWQ9IkxpbmUiIGQ9Ik05LjAwMDEyIDVMMTYuMDAwMSAxMkw5LjAwMDEyIDE5IiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogICAgICAgICAgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K" alt="Next">
+            </div>
+            <div class="swiper-button swiper-button-prev">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRTg5RjcxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggaWQ9IkxpbmUiIGQ9Ik05LjAwMDEyIDVMMTYuMDAwMSAxMkw5LjAwMDEyIDE5IiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogICAgICAgICAgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K" alt="Prev">
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section class="furniture">
+        <p class="xl">Share your setup with</p>
+        <h2>#FuniroFurniture</h2>
+        <div class="furniture__gallery">
+            <div class="furniture__gallery__col">
+                <div class="furniture__gallery__item">
+                    <img src="images/design/1.eb6b15.jpg" alt="Funiro gallery" class="furniture__gallery__img">
+                    <img src="images/design/2.77c55f.jpg" alt="Funiro gallery" class="furniture__gallery__img">
+                </div>
+                <div class="furniture__gallery__item">
+                    <img src="images/design/6.88c8ff.jpg" alt="Funiro gallery" class="furniture__gallery__img">
+                    <img src="data:image/jpeg;base64,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" alt="Funiro gallery" class="furniture__gallery__img">
+                </div>
+            </div>
+            <div class="furniture__gallery__col">
+                <div class="furniture__gallery__item">
+                    <img src="images/design/3.bf24ca.jpg" alt="Funiro gallery" class="furniture__gallery__img">
+                </div>
+            </div>
+            <div class="furniture__gallery__col">
+                <div class="furniture__gallery__item">
+                    <img src="images/design/4.db0914.jpg" alt="Funiro gallery" class="furniture__gallery__img">
+                    <img src="images/design/5.db5c45.jpg" alt="Funiro gallery" class="furniture__gallery__img">
+                </div>
+                <div class="furniture__gallery__item">
+                    <img src="data:image/jpeg;base64,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" alt="Funiro gallery" class="furniture__gallery__img">
+                    <img src="images/design/9.6e986d.jpg" alt="Funiro gallery" class="furniture__gallery__img">
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer container md">
+    <ul class="footer__col">
+        <li>Funiro.</li>
+        <li>Worldwide furniture store since 2020. We sell over 1000+ branded products on our website</li>
+        <li>Sawojajar Malang, Indonesia</li>
+        <li>+6289 456 3455</li>
+        <li>www.funiro.com</li>
+    </ul>
+    <div class="accordion" id="acc1">
+        <div class="accordion__item">
+            <div class="accordion__header">
+                <span>Menu</span>
+                <svg width="14" height="9" viewBox="0 0 14 9" fill="none" stroke="#616161" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.8333 1.50012L7.00001 7.33346L1.16668 1.50012" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="accordion__body">
+                <div>Products</div>
+                <div>Rooms</div>
+                <div>Inspirations</div>
+                <div>About Us</div>
+                <div>Terms & Policy</div>
+            </div>
+        </div>
+        <div class="accordion__item">
+            <div class="accordion__header">
+                <span>Account</span>
+                <svg width="14" height="9" viewBox="0 0 14 9" fill="none" stroke="#616161" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.8333 1.50012L7.00001 7.33346L1.16668 1.50012" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="accordion__body">
+                <div>My Account</div>
+                <div>Checkout</div>
+                <div>My Cart</div>
+                <div>My catalog</div>
+            </div>
+        </div>
+        <div class="accordion__item">
+            <div class="accordion__header">
+                <span>Stay Connected</span>
+                <svg width="14" height="9" viewBox="0 0 14 9" fill="none" stroke="#616161" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.8333 1.50012L7.00001 7.33346L1.16668 1.50012" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="accordion__body">
+                <div>Facebook</div>
+                <div>Instagram</div>
+                <div>Twitter</div>
+            </div>
+        </div>
+    </div>
+<!--    <ul class="footer__col">-->
+<!--        <li>Menu</li>-->
+<!--        <li>Products</li>-->
+<!--        <li>Rooms</li>-->
+<!--        <li>Inspirations</li>-->
+<!--        <li>About Us</li>-->
+<!--        <li>Terms & Policy</li>-->
+<!--    </ul>-->
+<!--    <ul class="footer__col">-->
+<!--        <li>Account</li>-->
+<!--        <li>My Account</li>-->
+<!--        <li>Checkout</li>-->
+<!--        <li>My Cart</li>-->
+<!--        <li>My catalog</li>-->
+<!--    </ul>-->
+<!--    <ul class="footer__col">-->
+<!--        <li>Stay Connected</li>-->
+<!--        <li>Facebook</li>-->
+<!--        <li>Instagram</li>-->
+<!--        <li>Twitter</li>-->
+<!--    </ul>-->
+    <ul class="footer__col">
+        <li>Stay Updated</li>
+        <li class="mail">
+            <input placeholder="Enter your email">
+            <button>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.7825 3.21745C20.6813 3.1167 20.5534 3.04695 20.4139 3.01639C20.2744 2.98584 20.1291 2.99574 19.995 3.04495L3.495 9.04495C3.3527 9.09892 3.23019 9.19491 3.14374 9.32016C3.05729 9.44542 3.01099 9.59401 3.01099 9.7462C3.01099 9.89839 3.05729 10.047 3.14374 10.1722C3.23019 10.2975 3.3527 10.3935 3.495 10.4474L9.9375 13.0199L14.6925 8.24995L15.75 9.30745L10.9725 14.0849L13.5525 20.5275C13.6081 20.667 13.7043 20.7866 13.8286 20.8709C13.953 20.9551 14.0998 21.0001 14.25 20.9999C14.4016 20.9968 14.5486 20.9479 14.6718 20.8595C14.795 20.7711 14.8885 20.6475 14.94 20.5049L20.94 4.00495C20.9911 3.87226 21.0034 3.72777 20.9755 3.58834C20.9477 3.44891 20.8807 3.32028 20.7825 3.21745Z"/>
+                </svg>
+            </button>
+        </li>
+    </ul>
+</footer>
+</body>
+</html>
